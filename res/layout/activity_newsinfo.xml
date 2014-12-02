@@ -59,12 +59,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" >
-            <TextView
+            <!-- <TextView
 	        android:id="@+id/tv_news_content"
 	        android:layout_width="match_parent"
 	        android:layout_height="match_parent"
 	        android:text="Medium Text"
-	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	        android:textAppearance="?android:attr/textAppearanceMedium" /> -->
+            <WebView
+        	android:id="@+id/wv_news_content"
+        	android:layout_width="match_parent"
+        	android:layout_height="match_parent" />
+            
         </LinearLayout>
     </ScrollView>
 

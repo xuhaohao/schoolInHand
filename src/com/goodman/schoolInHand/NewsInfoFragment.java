@@ -124,13 +124,14 @@ public class NewsInfoFragment extends Fragment {
 				if (app_newsInfoModel.getStrPublicTime() != null) {
 					map.put("duration", app_newsInfoModel.getStrPublicTime().substring(0, 10));
 				}
+				map.put("newsTypeName", app_newsInfoModel.getNewsTypeName());
 				// HashList添加到数组列表
 				modelList.add(map);
 			}
 			_adapter = new SimpleAdapter(view.getContext(),
 					modelList, R.layout.newslist_row, new String[] { "title",
-							"artist", "duration" }, new int[] { R.id.title,
-							R.id.artist, R.id.duration });
+							"artist", "duration","newsTypeName" }, new int[] { R.id.title,
+							R.id.artist, R.id.duration,R.id.tv_newsTypeName });
 			refreshList();
 		}
 

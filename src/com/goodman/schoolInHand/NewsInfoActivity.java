@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import com.goodman.schoolInHand.domain.App_NewsInfoModel;
 import com.goodman.schoolInHand.util.ClassPathResource;
+import com.goodman.schoolInHand.util.StaticRes;
 import com.goodman.schooolInHand.R;
 
 import android.app.Activity;
@@ -11,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +25,7 @@ public class NewsInfoActivity extends Activity implements android.view.View.OnCl
 	
 	private TextView tv_news_title;
 	private TextView tv_news_publicman;
-	private TextView tv_news_content;
+	private WebView wv_news_content;
 	private TextView tv_news_publicTime;
 	
 	@Override
@@ -58,9 +60,10 @@ public class NewsInfoActivity extends Activity implements android.view.View.OnCl
 		tv_news_publicTime = (TextView) findViewById(R.id.tv_news_publicTime);
 		tv_news_publicTime.setText(app_NewsInfoModel.getStrPublicTime());
 		
-		tv_news_content = (TextView) findViewById(R.id.tv_news_content);
-		
-		tv_news_content.setText(app_NewsInfoModel.getContent());
+		wv_news_content = (WebView) findViewById(R.id.wv_news_content);
+//		http://127.0.0.1/DMService/newsInfo/detail.html?pk=c06a0c04-703a-4e31-afb5-17d927317016
+		String strUrl = StaticRes.baseUrl + "/newsInfo/detail.html?pk="+app_NewsInfoModel.getPk();
+		wv_news_content.loadUrl(strUrl);
 	}
 	
 	@Override

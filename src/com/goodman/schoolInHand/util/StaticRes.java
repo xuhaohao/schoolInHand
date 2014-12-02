@@ -9,8 +9,8 @@ public class StaticRes {
 
 	public static App_CustomModel currCustom;
 	
-	public static String baseUrl = "http://115.28.171.84:8080/DeviceManagement";
-//	public static String baseUrl = "http://192.168.1.109/DMService";
+//	public static String baseUrl = "http://115.28.171.84:8080/DeviceManagement";
+	public static String baseUrl = "http://192.168.1.106/DMService";
 	
 	
 	
